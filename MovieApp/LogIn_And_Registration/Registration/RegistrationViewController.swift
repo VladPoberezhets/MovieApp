@@ -16,7 +16,9 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var registrationButton: UIButton!
     
-    let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    private let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    private let registrationSettings = RegistrationSettings()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +75,7 @@ class RegistrationViewController: UIViewController {
             self.activityIndicator.stopAnimating()
         }
     }
-    
+
     @IBAction func checkConfirmPassword(_ sender: UITextField) {
         // добавляєм activityIndicator в textfiled з правої сторони
         
@@ -96,17 +98,13 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    //button registartion
     @IBAction func RegistrationButtonClick(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            Auth.auth().createUser(withEmail: self.email.text ?? "", password: self.password.text ?? "") { (result, error) in
-                if result != nil{
-                    Auth.auth().signIn(withEmail: self.email.text ?? "", password:self.password.text ?? "") { (result, error) in
-                        if error == nil{
-                            
-                        }
-                        
-                    }
-                    
+        
+        if let email = self.email.text, let password = self.password.text{
+            registrationSettings.Registration(email: email, password: password) { (result) in
+                if result == true{
+                    print("user is registration")
                 }else{
                     let alert = UIAlertController(title: "Error", message: "Please try again", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Continue", style: .cancel, handler: nil)

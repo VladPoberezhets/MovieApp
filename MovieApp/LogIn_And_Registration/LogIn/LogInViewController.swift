@@ -18,6 +18,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var signInWithGoogleButton: GIDSignInButton!
     @IBOutlet weak var logInButton: UIButton!
     
+    private let logInSettings = LogInSettings()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +32,18 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func LogInButtonClick(_ sender: UIButton) {
-        if !emailAdress.text!.isEmpty && !password.text!.isEmpty{
-            DispatchQueue.main.async {
-                Auth.auth().signIn(withEmail: self.emailAdress.text!, password: self.password.text!) { (result, error) in
-                    if result != nil{
-                        print("user is login")
-                    }else{
-                        let alert = UIAlertController(title: "Error", message: "Incorect email or password", preferredStyle: .alert)
-                        let action = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
-                        alert.addAction(action)
-                        self.present(alert, animated: true, completion: nil)
-                    }
+        if let email = self.emailAdress.text, let password = self.password.text{
+            
+            self.logInSettings.LogIn(email: email, password: password) { (result) in
+                if result == true{
+                    print("user is login")
+                }else{
+                    let alert = UIAlertController(title: "Error", message: "Incorect email or password", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
-            
-            
         }
     }
     

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		72D3EA29E33BCA815C3BCC1A /* Pods_MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E5E7E01DE6122F2D03D80B /* Pods_MovieApp.framework */; };
+		F517D09125247DA500492A2A /* LogInSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D09025247DA500492A2A /* LogInSettings.swift */; };
+		F517D09625247FFA00492A2A /* PasswordRecoverySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D09525247FFA00492A2A /* PasswordRecoverySettings.swift */; };
+		F517D09A2524817100492A2A /* RegistrationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0992524817100492A2A /* RegistrationSettings.swift */; };
 		F5A9F3722521D5EE00DC9958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */; };
 		F5A9F3742521D5EE00DC9958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */; };
 		F5A9F3762521D5EE00DC9958 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3752521D5EE00DC9958 /* LogInViewController.swift */; };
@@ -23,6 +26,9 @@
 		21E5E7E01DE6122F2D03D80B /* Pods_MovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E1A89CF56D84587240ACCA /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		761BA880061BCC2187B532D2 /* Pods-MovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F517D09025247DA500492A2A /* LogInSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSettings.swift; sourceTree = "<group>"; };
+		F517D09525247FFA00492A2A /* PasswordRecoverySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySettings.swift; sourceTree = "<group>"; };
+		F517D0992524817100492A2A /* RegistrationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSettings.swift; sourceTree = "<group>"; };
 		F5A9F36E2521D5ED00DC9958 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +71,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F517D08F25247D8800492A2A /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				F5A9F3752521D5EE00DC9958 /* LogInViewController.swift */,
+				F517D09025247DA500492A2A /* LogInSettings.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		F517D09325247FD300492A2A /* PasswordRecovery */ = {
+			isa = PBXGroup;
+			children = (
+				F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */,
+				F517D09525247FFA00492A2A /* PasswordRecoverySettings.swift */,
+			);
+			path = PasswordRecovery;
+			sourceTree = "<group>";
+		};
+		F517D0982524815D00492A2A /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */,
+				F517D0992524817100492A2A /* RegistrationSettings.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		F5A9F3652521D5ED00DC9958 = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +133,9 @@
 		F5E82C962521F76100C01ADD /* LogIn_And_Registration */ = {
 			isa = PBXGroup;
 			children = (
-				F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */,
-				F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */,
-				F5A9F3752521D5EE00DC9958 /* LogInViewController.swift */,
+				F517D0982524815D00492A2A /* Registration */,
+				F517D09325247FD300492A2A /* PasswordRecovery */,
+				F517D08F25247D8800492A2A /* LogIn */,
 				F5A9F3772521D5EE00DC9958 /* Main.storyboard */,
 			);
 			path = LogIn_And_Registration;
@@ -242,7 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A9F3762521D5EE00DC9958 /* LogInViewController.swift in Sources */,
+				F517D09A2524817100492A2A /* RegistrationSettings.swift in Sources */,
 				F5A9F3722521D5EE00DC9958 /* AppDelegate.swift in Sources */,
+				F517D09625247FFA00492A2A /* PasswordRecoverySettings.swift in Sources */,
+				F517D09125247DA500492A2A /* LogInSettings.swift in Sources */,
 				F5E82C912521F5E700C01ADD /* RegistrationViewController.swift in Sources */,
 				F5E82C942521F60700C01ADD /* PasswordRecoveryViewController.swift in Sources */,
 				F5A9F3742521D5EE00DC9958 /* SceneDelegate.swift in Sources */,
