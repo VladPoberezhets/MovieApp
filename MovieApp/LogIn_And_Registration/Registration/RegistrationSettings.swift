@@ -10,8 +10,10 @@ import FirebaseAuth
 
 class RegistrationSettings{
     
+    //об'кт з методом для входу
     private let logIn = LogInSettings()
     
+    //метод для регістрації користувача, якщо користувач зареєстрований, одразу робиться вхід користувача, після цього якщо користувач зареєстрований ветаємо clouser з Bool значенням true
     func Registration(email:String,password:String, complition: @escaping (Bool)->Void){
         DispatchQueue.main.async {
             // create user
@@ -25,7 +27,6 @@ class RegistrationSettings{
                             complition(false)
                         }
                     }
-                    
                 }else{
                     complition(false)
                 }

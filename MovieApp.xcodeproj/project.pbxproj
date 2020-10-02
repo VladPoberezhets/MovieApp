@@ -11,12 +11,29 @@
 		F517D09125247DA500492A2A /* LogInSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D09025247DA500492A2A /* LogInSettings.swift */; };
 		F517D09625247FFA00492A2A /* PasswordRecoverySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D09525247FFA00492A2A /* PasswordRecoverySettings.swift */; };
 		F517D09A2524817100492A2A /* RegistrationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0992524817100492A2A /* RegistrationSettings.swift */; };
+		F517D0B1252487FA00492A2A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0B0252487FA00492A2A /* UserModel.swift */; };
+		F517D0B5252488FE00492A2A /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F517D0B4252488FE00492A2A /* TabBar.storyboard */; };
+		F517D0B8252492AE00492A2A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0B7252492AE00492A2A /* ProfileViewController.swift */; };
+		F517D0BB252492D800492A2A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F517D0BA252492D800492A2A /* ProfileTableViewCell.xib */; };
+		F517D0BF2524944B00492A2A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0BE2524944B00492A2A /* ProfileTableViewCell.swift */; };
+		F517D0C325249F6700492A2A /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0C225249F6700492A2A /* UserNameViewController.swift */; };
+		F517D0C625249F7D00492A2A /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0C525249F7D00492A2A /* ProfileImageViewController.swift */; };
+		F517D0CC2524A9A500492A2A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0CB2524A9A500492A2A /* ImagePicker.swift */; };
+		F517D0CF2524D15300492A2A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0CE2524D15300492A2A /* TabBarViewController.swift */; };
+		F517D0D22524D1F100492A2A /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517D0D12524D1F100492A2A /* NavigationViewController.swift */; };
 		F5A9F3722521D5EE00DC9958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */; };
 		F5A9F3742521D5EE00DC9958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */; };
 		F5A9F3762521D5EE00DC9958 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F3752521D5EE00DC9958 /* LogInViewController.swift */; };
 		F5A9F3792521D5EE00DC9958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F3772521D5EE00DC9958 /* Main.storyboard */; };
 		F5A9F37B2521D5F100DC9958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F37A2521D5F100DC9958 /* Assets.xcassets */; };
 		F5A9F37E2521D5F100DC9958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F37C2521D5F100DC9958 /* LaunchScreen.storyboard */; };
+		F5BA36A92525C48C00464E36 /* ProfileImageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA36A82525C48C00464E36 /* ProfileImageSettings.swift */; };
+		F5BA36AD2525C6AE00464E36 /* ProfileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA36AC2525C6AE00464E36 /* ProfileSettings.swift */; };
+		F5BA36B52525F32400464E36 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA36B42525F32400464E36 /* ActivityIndicator.swift */; };
+		F5C1B49E2527212A00138260 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B49D2527212A00138260 /* HomeCollectionViewController.swift */; };
+		F5C1B4A62527266C00138260 /* FavoritesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C1B4A52527266C00138260 /* FavoritesCell.xib */; };
+		F5C1B4A92527267800138260 /* FeaturedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C1B4A82527267800138260 /* FeaturedCell.xib */; };
+		F5C1B4AC2527268400138260 /* LatestedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C1B4AB2527268400138260 /* LatestedCell.xib */; };
 		F5E82C8B2521EED500C01ADD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */; };
 		F5E82C912521F5E700C01ADD /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */; };
 		F5E82C942521F60700C01ADD /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */; };
@@ -29,6 +46,16 @@
 		F517D09025247DA500492A2A /* LogInSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSettings.swift; sourceTree = "<group>"; };
 		F517D09525247FFA00492A2A /* PasswordRecoverySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverySettings.swift; sourceTree = "<group>"; };
 		F517D0992524817100492A2A /* RegistrationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSettings.swift; sourceTree = "<group>"; };
+		F517D0B0252487FA00492A2A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = MovieApp/LogIn_And_Registration/Registration/UserModel.swift; sourceTree = SOURCE_ROOT; };
+		F517D0B4252488FE00492A2A /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		F517D0B7252492AE00492A2A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F517D0BA252492D800492A2A /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		F517D0BE2524944B00492A2A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		F517D0C225249F6700492A2A /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
+		F517D0C525249F7D00492A2A /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
+		F517D0CB2524A9A500492A2A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F517D0CE2524D15300492A2A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F517D0D12524D1F100492A2A /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F5A9F36E2521D5ED00DC9958 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +64,13 @@
 		F5A9F37A2521D5F100DC9958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A9F37D2521D5F100DC9958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A9F37F2521D5F100DC9958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5BA36A82525C48C00464E36 /* ProfileImageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSettings.swift; sourceTree = "<group>"; };
+		F5BA36AC2525C6AE00464E36 /* ProfileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettings.swift; sourceTree = "<group>"; };
+		F5BA36B42525F32400464E36 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F5C1B49D2527212A00138260 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		F5C1B4A52527266C00138260 /* FavoritesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
+		F5C1B4A82527267800138260 /* FeaturedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedCell.xib; sourceTree = "<group>"; };
+		F5C1B4AB2527268400138260 /* LatestedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestedCell.xib; sourceTree = "<group>"; };
 		F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +132,53 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		F517D0AC252487E800492A2A /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0B0252487FA00492A2A /* UserModel.swift */,
+				F517D0B7252492AE00492A2A /* ProfileViewController.swift */,
+				F5BA36AC2525C6AE00464E36 /* ProfileSettings.swift */,
+				F517D0BD2524942F00492A2A /* ProfileCell */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		F517D0B3252488E800492A2A /* TabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0B4252488FE00492A2A /* TabBar.storyboard */,
+				F517D0CE2524D15300492A2A /* TabBarViewController.swift */,
+			);
+			path = TabBarView;
+			sourceTree = "<group>";
+		};
+		F517D0BD2524942F00492A2A /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0BA252492D800492A2A /* ProfileTableViewCell.xib */,
+				F517D0BE2524944B00492A2A /* ProfileTableViewCell.swift */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		F517D0C825249F8100492A2A /* UserNameView */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0C225249F6700492A2A /* UserNameViewController.swift */,
+			);
+			path = UserNameView;
+			sourceTree = "<group>";
+		};
+		F517D0C925249F9100492A2A /* ProfileImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F517D0C525249F7D00492A2A /* ProfileImageViewController.swift */,
+				F5BA36A82525C48C00464E36 /* ProfileImageSettings.swift */,
+				F517D0CB2524A9A500492A2A /* ImagePicker.swift */,
+			);
+			path = ProfileImageView;
+			sourceTree = "<group>";
+		};
 		F5A9F3652521D5ED00DC9958 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +203,10 @@
 				F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */,
 				F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */,
 				F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */,
+				F5BA36B82525F53D00464E36 /* ActivityIndicator */,
+				F5C1B49C2527210800138260 /* HomePageView */,
+				F517D0B3252488E800492A2A /* TabBarView */,
+				F517D0AC252487E800492A2A /* UserProfile */,
 				F5E82C962521F76100C01ADD /* LogIn_And_Registration */,
 				F5A9F37A2521D5F100DC9958 /* Assets.xcassets */,
 				F5A9F37C2521D5F100DC9958 /* LaunchScreen.storyboard */,
@@ -130,13 +215,35 @@
 			path = MovieApp;
 			sourceTree = "<group>";
 		};
+		F5BA36B82525F53D00464E36 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				F5BA36B42525F32400464E36 /* ActivityIndicator.swift */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		F5C1B49C2527210800138260 /* HomePageView */ = {
+			isa = PBXGroup;
+			children = (
+				F5C1B49D2527212A00138260 /* HomeCollectionViewController.swift */,
+				F5C1B4A52527266C00138260 /* FavoritesCell.xib */,
+				F5C1B4A82527267800138260 /* FeaturedCell.xib */,
+				F5C1B4AB2527268400138260 /* LatestedCell.xib */,
+			);
+			path = HomePageView;
+			sourceTree = "<group>";
+		};
 		F5E82C962521F76100C01ADD /* LogIn_And_Registration */ = {
 			isa = PBXGroup;
 			children = (
+				F517D0C925249F9100492A2A /* ProfileImageView */,
+				F517D0C825249F8100492A2A /* UserNameView */,
 				F517D0982524815D00492A2A /* Registration */,
 				F517D09325247FD300492A2A /* PasswordRecovery */,
 				F517D08F25247D8800492A2A /* LogIn */,
 				F5A9F3772521D5EE00DC9958 /* Main.storyboard */,
+				F517D0D12524D1F100492A2A /* NavigationViewController.swift */,
 			);
 			path = LogIn_And_Registration;
 			sourceTree = "<group>";
@@ -201,10 +308,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C1B4AC2527268400138260 /* LatestedCell.xib in Resources */,
+				F517D0B5252488FE00492A2A /* TabBar.storyboard in Resources */,
+				F5C1B4A92527267800138260 /* FeaturedCell.xib in Resources */,
 				F5A9F37E2521D5F100DC9958 /* LaunchScreen.storyboard in Resources */,
 				F5A9F37B2521D5F100DC9958 /* Assets.xcassets in Resources */,
+				F517D0BB252492D800492A2A /* ProfileTableViewCell.xib in Resources */,
 				F5E82C8B2521EED500C01ADD /* GoogleService-Info.plist in Resources */,
 				F5A9F3792521D5EE00DC9958 /* Main.storyboard in Resources */,
+				F5C1B4A62527266C00138260 /* FavoritesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,11 +388,23 @@
 			files = (
 				F5A9F3762521D5EE00DC9958 /* LogInViewController.swift in Sources */,
 				F517D09A2524817100492A2A /* RegistrationSettings.swift in Sources */,
+				F5BA36B52525F32400464E36 /* ActivityIndicator.swift in Sources */,
+				F517D0B8252492AE00492A2A /* ProfileViewController.swift in Sources */,
+				F517D0CC2524A9A500492A2A /* ImagePicker.swift in Sources */,
+				F517D0C625249F7D00492A2A /* ProfileImageViewController.swift in Sources */,
+				F517D0BF2524944B00492A2A /* ProfileTableViewCell.swift in Sources */,
 				F5A9F3722521D5EE00DC9958 /* AppDelegate.swift in Sources */,
 				F517D09625247FFA00492A2A /* PasswordRecoverySettings.swift in Sources */,
+				F517D0D22524D1F100492A2A /* NavigationViewController.swift in Sources */,
 				F517D09125247DA500492A2A /* LogInSettings.swift in Sources */,
+				F5BA36A92525C48C00464E36 /* ProfileImageSettings.swift in Sources */,
 				F5E82C912521F5E700C01ADD /* RegistrationViewController.swift in Sources */,
+				F5C1B49E2527212A00138260 /* HomeCollectionViewController.swift in Sources */,
 				F5E82C942521F60700C01ADD /* PasswordRecoveryViewController.swift in Sources */,
+				F517D0B1252487FA00492A2A /* UserModel.swift in Sources */,
+				F5BA36AD2525C6AE00464E36 /* ProfileSettings.swift in Sources */,
+				F517D0C325249F6700492A2A /* UserNameViewController.swift in Sources */,
+				F517D0CF2524D15300492A2A /* TabBarViewController.swift in Sources */,
 				F5A9F3742521D5EE00DC9958 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
