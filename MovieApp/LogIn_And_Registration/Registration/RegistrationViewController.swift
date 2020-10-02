@@ -20,6 +20,8 @@ class RegistrationViewController: UIViewController {
     
     private let registrationSettings = RegistrationSettings()
     
+    private let activityIndicatorView = ActivityIndicator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
@@ -100,11 +102,16 @@ class RegistrationViewController: UIViewController {
     
     //button registartion
     @IBAction func RegistrationButtonClick(_ sender: UIButton) {
-        
+        self.present(self.activityIndicatorView.alert, animated: true, completion: nil)
         if let email = self.email.text, let password = self.password.text{
             registrationSettings.Registration(email: email, password: password) { (result) in
                 if result == true{
-                    print("user is registration")
+                    self.activityIndicatorView.alert.dismiss(animated: true, completion: nil)
+                    // if user is registartion and login, move to UserNameViewController
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let userNameVC = storyboard.instantiateViewController(withIdentifier: "UserNameViewController")
+                    userNameVC.modalPresentationStyle = .fullScreen
+                    self.present(userNameVC, animated: true, completion: nil)
                 }else{
                     let alert = UIAlertController(title: "Error", message: "Please try again", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Continue", style: .cancel, handler: nil)

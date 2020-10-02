@@ -15,6 +15,7 @@ class PasswordRecoveryViewController: UIViewController {
     
     @IBOutlet weak var recoveryButton: UIButton!
     
+    //об'єкт з методом востановлення пароля
     private let passwordRecoverySettings = PasswordRecoverySettings()
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class PasswordRecoveryViewController: UIViewController {
         email.leftViewMode = .always
     }
     
-    
+    // перевіряєм чи є email уже зареєстрований
     @IBAction func checkEmail(_ sender: UITextField) {
         // добавляєм activityIndicator в textfiled з правої сторони
         let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
@@ -92,6 +93,7 @@ class PasswordRecoveryViewController: UIViewController {
         }
     }
     
+    //пілся натискання кнопки визивається метод для востановлення пароля, якщо письмо прийшло показуєм alert з Success повідомленням
     @IBAction func recoveryButtonClick(_ sender: UIButton) {
         if let email = self.email.text{
             self.passwordRecoverySettings.PasswordRecovery(email: email) { (result) in
