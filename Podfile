@@ -7,6 +7,7 @@ target 'MovieApp' do
 
   pod 'Firebase/Auth'
 pod 'Alamofire'
+pod 'AlamofireImage'
 pod 'GoogleSignIn'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
