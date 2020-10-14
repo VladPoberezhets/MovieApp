@@ -8,5 +8,5 @@
 import Foundation
 // делегат через який передаєм дані в viewController
 protocol PopularDelegate{
-    func GetLatestedData(obj:PopularModel)
+    func GetPopularData(obj:MoviesModel)
 }

@@ -22,7 +22,7 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
         
         self.collectionView.addSubview(activityIndicator)
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-50, width: view.frame.width, height: view.frame.height)
+        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-150, width: view.frame.width, height: view.frame.height)
         activityIndicator.style = .medium
         activityIndicator.backgroundColor = .white
         activityIndicator.startAnimating()

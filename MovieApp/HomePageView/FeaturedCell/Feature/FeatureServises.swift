@@ -17,7 +17,7 @@ class FeatureServises{
     **Parameters:**
         - complition: return clouser FeatureModel object.
     */
-    func GetDataFeature(complition:@escaping (FeatureModel)->Void){
+    func GetDataFeature(complition:@escaping (MoviesModel)->Void){
         let url = "https://api.themoviedb.org/3/movie/upcoming?"
         let api_key = "f910e2224b142497cc05444043cc8aa4"
         let language = "en-US"
@@ -27,7 +27,7 @@ class FeatureServises{
             AF.request("\(url)api_key=\(api_key)&language=\(language)&page=\(page)").response { (response) in
                 if let data = response.data{
                     let jsonDecoder = JSONDecoder()
-                    let featureData = try! jsonDecoder.decode(FeatureModel.self, from: data)
+                    let featureData = try! jsonDecoder.decode(MoviesModel.self, from: data)
                     complition(featureData)
                 }else{
                     print("Erorr request")

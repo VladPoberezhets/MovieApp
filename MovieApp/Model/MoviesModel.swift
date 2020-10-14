@@ -1,20 +1,19 @@
 //
-//  PopularModel.swift
+//  MoviesModel.swift
 //  MovieApp
 //
-//  Created by Vlad on 12.10.2020.
+//  Created by Vlad on 13.10.2020.
 //
 
 import Foundation
 
-struct PopularModel:Codable{
-    var page:Int
-    var results:[PopularResult]
-    var total_pages:Int
-    var total_results:Int
+// она модель на всі категорії
+struct MoviesModel:Codable{
+    var results:[ResultMovies]
+
 }
 
-struct PopularResult:Codable{
+struct ResultMovies:Codable{
     var poster_path:String
     var adult:Bool
     var overview:String
@@ -30,5 +29,3 @@ struct PopularResult:Codable{
     var video:Bool
     var vote_average:Double
 }
-
-

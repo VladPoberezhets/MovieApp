@@ -15,7 +15,7 @@ class LatestedCollectionViewInCell: UICollectionViewCell {
     private let latestedServises = LatestedServises()
     
     // масив з отриманими обєктами
-    private var result = [Result]()
+    private var result = [ResultMovies]()
     
     //створюєм collectionView
     let collectionView: UICollectionView = {
@@ -63,7 +63,7 @@ class LatestedCollectionViewInCell: UICollectionViewCell {
 }
 
 extension LatestedCollectionViewInCell:LatestedDelegate{
-    func GetLatestedData(obj: LatestedModel) {
+    func GetLatestedData(obj: MoviesModel) {
         self.result = obj.results
         self.collectionView.reloadData()
     }
@@ -94,5 +94,13 @@ extension LatestedCollectionViewInCell:UICollectionViewDataSource, UICollectionV
     //розмір collectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.frame.width-10, height: 240);
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let stroryboard = UIStoryboard(name: "Detail", bundle: nil)
+        let detailVC = stroryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.resultMovies = result[indexPath.row]
+//        detailVC.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(detailVC, animated: true, completion: nil)
     }
 }
