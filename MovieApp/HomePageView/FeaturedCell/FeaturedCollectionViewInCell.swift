@@ -17,6 +17,8 @@ class FeaturedCollectionViewInCell: UICollectionViewCell{
     // масив з отриманими обєктами
     private var result = [ResultMovies]()
     
+    private let getImageFromUrl = GetImageFromUrl()
+    
     //створюєм collectionView
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout();
@@ -84,7 +86,7 @@ extension FeaturedCollectionViewInCell:UICollectionViewDataSource, UICollectionV
         cell.rating.text = "\(result[indexPath.row].vote_average)"
         
         // знаходи іприсваєюм картинку в ячейку
-        featureServises.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
+        getImageFromUrl.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
             cell.image.image = image
         }
         

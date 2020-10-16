@@ -40,6 +40,8 @@
 		F5A9F3792521D5EE00DC9958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F3772521D5EE00DC9958 /* Main.storyboard */; };
 		F5A9F37B2521D5F100DC9958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F37A2521D5F100DC9958 /* Assets.xcassets */; };
 		F5A9F37E2521D5F100DC9958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F37C2521D5F100DC9958 /* LaunchScreen.storyboard */; };
+		F5B3DDC425382B65005D4035 /* FavoritesMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3DDC325382B65005D4035 /* FavoritesMoviePresenter.swift */; };
+		F5B3DDCA253882D2005D4035 /* FavoritesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3DDC9253882D2005D4035 /* FavoritesDelegate.swift */; };
 		F5B8A727252C77CD000A223A /* FeaturePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8A726252C77CD000A223A /* FeaturePresenter.swift */; };
 		F5B8A72A252C77D9000A223A /* FeatureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8A729252C77D9000A223A /* FeatureDelegate.swift */; };
 		F5B8A72F252C7892000A223A /* FeatureServises.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8A72E252C7892000A223A /* FeatureServises.swift */; };
@@ -58,6 +60,7 @@
 		F5C1B4D02527316500138260 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4CF2527316500138260 /* FeaturedCell.swift */; };
 		F5C1B4D32527317B00138260 /* LatestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4D22527317B00138260 /* LatestedCell.swift */; };
 		F5C1B4EB252753E600138260 /* FavoritesCollectionViewInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4EA252753E600138260 /* FavoritesCollectionViewInCell.swift */; };
+		F5DEA3E02539B6C30099A805 /* GetImageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3DF2539B6C30099A805 /* GetImageFromUrl.swift */; };
 		F5E82C8B2521EED500C01ADD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */; };
 		F5E82C912521F5E700C01ADD /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */; };
 		F5E82C942521F60700C01ADD /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */; };
@@ -103,6 +106,8 @@
 		F5A9F37A2521D5F100DC9958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A9F37D2521D5F100DC9958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A9F37F2521D5F100DC9958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5B3DDC325382B65005D4035 /* FavoritesMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMoviePresenter.swift; sourceTree = "<group>"; };
+		F5B3DDC9253882D2005D4035 /* FavoritesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDelegate.swift; sourceTree = "<group>"; };
 		F5B8A726252C77CD000A223A /* FeaturePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePresenter.swift; sourceTree = "<group>"; };
 		F5B8A729252C77D9000A223A /* FeatureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDelegate.swift; sourceTree = "<group>"; };
 		F5B8A72E252C7892000A223A /* FeatureServises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureServises.swift; sourceTree = "<group>"; };
@@ -117,10 +122,11 @@
 		F5C1B4A52527266C00138260 /* FavoritesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
 		F5C1B4A82527267800138260 /* FeaturedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedCell.xib; sourceTree = "<group>"; };
 		F5C1B4AB2527268400138260 /* LatestedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestedCell.xib; sourceTree = "<group>"; };
-		F5C1B4CC2527315300138260 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCell.swift; path = MovieApp/HomePageView/FavoritesCell.swift; sourceTree = SOURCE_ROOT; };
+		F5C1B4CC2527315300138260 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCell.swift; path = MovieApp/HomePageView/FavoritesCell/FavoritesCell.swift; sourceTree = SOURCE_ROOT; };
 		F5C1B4CF2527316500138260 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeaturedCell.swift; path = MovieApp/HomePageView/FeaturedCell.swift; sourceTree = SOURCE_ROOT; };
 		F5C1B4D22527317B00138260 /* LatestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LatestedCell.swift; path = MovieApp/HomePageView/LatestedCell.swift; sourceTree = SOURCE_ROOT; };
 		F5C1B4EA252753E600138260 /* FavoritesCollectionViewInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewInCell.swift; path = MovieApp/HomePageView/FavoritesCollectionViewInCell.swift; sourceTree = SOURCE_ROOT; };
+		F5DEA3DF2539B6C30099A805 /* GetImageFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageFromUrl.swift; sourceTree = "<group>"; };
 		F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F5E82C932521F60700C01ADD /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 				F5A9F3712521D5EE00DC9958 /* AppDelegate.swift */,
 				F5A9F3732521D5EE00DC9958 /* SceneDelegate.swift */,
 				F55818FC252B3F9500C38240 /* Model */,
+				F5DEA3DE2539B6A20099A805 /* GetImageForUrl */,
 				F5BA36B82525F53D00464E36 /* ActivityIndicator */,
 				F5742F6F253337C000FF147D /* Movie */,
 				F5487D592535BA3E00055C4E /* DetailView */,
@@ -336,6 +343,15 @@
 				F5A9F37F2521D5F100DC9958 /* Info.plist */,
 			);
 			path = MovieApp;
+			sourceTree = "<group>";
+		};
+		F5B3DDCD253885CF005D4035 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				F5B3DDC325382B65005D4035 /* FavoritesMoviePresenter.swift */,
+				F5B3DDC9253882D2005D4035 /* FavoritesDelegate.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		F5BA36B82525F53D00464E36 /* ActivityIndicator */ = {
@@ -360,6 +376,7 @@
 		F5C1B4C12527274E00138260 /* FavoritesCell */ = {
 			isa = PBXGroup;
 			children = (
+				F5B3DDCD253885CF005D4035 /* Favorites */,
 				F5C1B4A52527266C00138260 /* FavoritesCell.xib */,
 				F5C1B4CC2527315300138260 /* FavoritesCell.swift */,
 				F5C1B4EA252753E600138260 /* FavoritesCollectionViewInCell.swift */,
@@ -390,6 +407,14 @@
 				F5FD7B32252DFBBC002EC1BE /* LatestedHeaderCollectionReusableView.swift */,
 			);
 			path = LatestedCell;
+			sourceTree = "<group>";
+		};
+		F5DEA3DE2539B6A20099A805 /* GetImageForUrl */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEA3DF2539B6C30099A805 /* GetImageFromUrl.swift */,
+			);
+			path = GetImageForUrl;
 			sourceTree = "<group>";
 		};
 		F5E82C962521F76100C01ADD /* LogIn_And_Registration */ = {
@@ -556,6 +581,7 @@
 				F5B8A755252C9824000A223A /* LatestedServises.swift in Sources */,
 				F5BA36B52525F32400464E36 /* ActivityIndicator.swift in Sources */,
 				F517D0B8252492AE00492A2A /* ProfileViewController.swift in Sources */,
+				F5DEA3E02539B6C30099A805 /* GetImageFromUrl.swift in Sources */,
 				F517D0CC2524A9A500492A2A /* ImagePicker.swift in Sources */,
 				F517D0C625249F7D00492A2A /* ProfileImageViewController.swift in Sources */,
 				F517D0BF2524944B00492A2A /* ProfileTableViewCell.swift in Sources */,
@@ -585,11 +611,13 @@
 				F5E82C942521F60700C01ADD /* PasswordRecoveryViewController.swift in Sources */,
 				F517D0B1252487FA00492A2A /* UserModel.swift in Sources */,
 				F5BA36AD2525C6AE00464E36 /* ProfileSettings.swift in Sources */,
+				F5B3DDCA253882D2005D4035 /* FavoritesDelegate.swift in Sources */,
 				F517D0C325249F6700492A2A /* UserNameViewController.swift in Sources */,
 				F517D0CF2524D15300492A2A /* TabBarViewController.swift in Sources */,
 				F5B8A74F252C9807000A223A /* LatestedPresenter.swift in Sources */,
 				F5B8A727252C77CD000A223A /* FeaturePresenter.swift in Sources */,
 				F5846D3D2534964100A75CA7 /* PopularCollectionViewCell.swift in Sources */,
+				F5B3DDC425382B65005D4035 /* FavoritesMoviePresenter.swift in Sources */,
 				F5A9F3742521D5EE00DC9958 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

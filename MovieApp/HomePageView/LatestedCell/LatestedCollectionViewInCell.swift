@@ -17,6 +17,8 @@ class LatestedCollectionViewInCell: UICollectionViewCell {
     // масив з отриманими обєктами
     private var result = [ResultMovies]()
     
+    private let getImageFromUrl = GetImageFromUrl()
+    
     //створюєм collectionView
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout();
@@ -80,7 +82,7 @@ extension LatestedCollectionViewInCell:UICollectionViewDataSource, UICollectionV
         cell.date.text = result[indexPath.row].release_date
         cell.descritptionMovie.text = result[indexPath.row].overview
         
-        latestedServises.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
+        getImageFromUrl.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
             cell.image.image = image
         }
         

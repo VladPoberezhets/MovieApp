@@ -11,4 +11,5 @@ pod 'AlamofireImage'
 pod 'GoogleSignIn'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
+pod 'CodableFirebase'
 end

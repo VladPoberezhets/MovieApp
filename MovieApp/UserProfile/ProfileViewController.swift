@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     
     // обявляємклас з кастом alert з activityIndicator
     private let activityIndicatorView = ActivityIndicator()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -35,24 +35,5 @@ class LatestedServises{
         }
         
     }
-    
-    /**
-    This function returns a UIImage.
-     
-    **Parameters:**
-        - complition: return clouser UIImage.
-     - urlImage: path url image.
-    */
-    func GetImage(urlImage:String, complition:@escaping (UIImage)->Void){
-        let url = "https://image.tmdb.org/t/p/original"
-        DispatchQueue.main.async {
-            AF.request(url+urlImage).responseImage { (image) in
-                if let image = image.value{
-                    complition(image)
-                }else{
-                    print("error request image")
-                }
-            }
-        }
-    }
+ 
 }
