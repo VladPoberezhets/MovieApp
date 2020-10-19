@@ -7,12 +7,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     
    
-    let activityIndicator = UIActivityIndicatorView()
+    private let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,7 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
         
         self.collectionView.addSubview(activityIndicator)
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-50, width: view.frame.width, height: view.frame.height)
+        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-150, width: view.frame.width, height: view.frame.height)
         activityIndicator.style = .medium
         activityIndicator.backgroundColor = .white
         activityIndicator.startAnimating()
@@ -63,7 +62,7 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
         
         if indexPath.section == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCollectionViewInCell
-            
+
             return cell
         }else if indexPath.section == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedCell", for: indexPath) as! FeaturedCollectionViewInCell
@@ -92,8 +91,20 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
             return CGSize(width: view.frame.width-20, height: view.frame.height);
         }
         
+        if indexPath.section == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCollectionViewInCell
+//            print(cell.resultMovies.isEmpty)
+            if cell.resultMovies.isEmpty{
+////                collectionView.reloadData()
+//                cell.collectionView.reloadData()
+                return CGSize(width: 0, height: 0);
+            }
+          
+                return CGSize(width: view.frame.width-20, height: 250);
+            
+        }
         // тут буде перевірки чи є обрані фільми якщо немає то встановлюєм занчення 0 0
-        return CGSize(width: view.frame.width-20, height: 200);
+        return CGSize(width: 0, height: 0);
     }
     
     

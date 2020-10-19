@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     
     // обявляємклас з кастом alert з activityIndicator
     private let activityIndicatorView = ActivityIndicator()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +113,13 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 print("error sing out")
             }
         }
+        
+        if indexPath.section == 0 {
+            let stroryboard = UIStoryboard(name: "TabBar", bundle: nil)
+            let favoritesVC = stroryboard.instantiateViewController(withIdentifier: "FavoritesCollectionViewController")
+            
+            self.navigationController?.present(favoritesVC, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -121,5 +129,7 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+   
+ 
     
 }

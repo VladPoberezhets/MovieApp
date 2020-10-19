@@ -16,7 +16,7 @@ class PopularServises{
     **Parameters:**
         - complition: return clouser PopularModel object.
     */
-    func GetDataPapular(complition:@escaping (PopularModel)->Void){
+    func GetDataPapular(complition:@escaping (MoviesModel)->Void){
         let url = "https://api.themoviedb.org/3/movie/popular?"
         let api_key = "f910e2224b142497cc05444043cc8aa4"
         let language = "en-US"
@@ -26,7 +26,7 @@ class PopularServises{
             AF.request("\(url)api_key=\(api_key)&language=\(language)&page=\(page)").response { (response) in
                 if let data = response.data{
                     let jsonDecoder = JSONDecoder()
-                    let popularData = try! jsonDecoder.decode(PopularModel.self, from: data)
+                    let popularData = try! jsonDecoder.decode(MoviesModel.self, from: data)
                     complition(popularData)
                 }else{
                     print("Erorr request")
@@ -36,23 +36,5 @@ class PopularServises{
         
     }
     
-    /**
-    This function returns a UIImage.
-     
-    **Parameters:**
-        - complition: return clouser UIImage.
-     - urlImage: path url image.
-    */
-    func GetImage(urlImage:String, complition:@escaping (UIImage)->Void){
-        let url = "https://image.tmdb.org/t/p/original"
-        DispatchQueue.global(qos: .userInteractive).async {
-            AF.request(url+urlImage).responseImage { (image) in
-                if let image = image.value{
-                    complition(image)
-                }else{
-                    print("error request image")
-                }
-            }
-        }
-    }
+
 }

@@ -10,5 +10,5 @@ import UIKit
 
 // делегат через який передаєм дані в viewController
 protocol FeatureDelegate{
-    func GetFeatureData(obj:FeatureModel)
+    func GetFeatureData(obj:MoviesModel)
 }

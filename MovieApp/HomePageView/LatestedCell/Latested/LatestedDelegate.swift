@@ -9,5 +9,5 @@ import Foundation
 
 // делегат через який передаєм дані в viewController
 protocol LatestedDelegate{
-    func GetLatestedData(obj:LatestedModel)
+    func GetLatestedData(obj:MoviesModel)
 }

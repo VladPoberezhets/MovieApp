@@ -21,7 +21,7 @@ class PopularPresenter{
     // функція через яку ми передаєм делегату дані
     func SetDataPopularToUI(){
         popularServises.GetDataPapular { (popularModel) in
-            self.popularDelegate!.GetLatestedData(obj: popularModel)
+            self.popularDelegate!.GetPopularData(obj: popularModel)
         }
     }
 }

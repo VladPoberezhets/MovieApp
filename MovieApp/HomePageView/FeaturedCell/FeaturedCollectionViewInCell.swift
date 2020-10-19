@@ -15,7 +15,9 @@ class FeaturedCollectionViewInCell: UICollectionViewCell{
     private let featureServises = FeatureServises()
     
     // масив з отриманими обєктами
-    private var result = [ResultFeature]()
+    private var result = [ResultMovies]()
+    
+    private let getImageFromUrl = GetImageFromUrl()
     
     //створюєм collectionView
     let collectionView: UICollectionView = {
@@ -63,7 +65,7 @@ class FeaturedCollectionViewInCell: UICollectionViewCell{
 
 
 extension FeaturedCollectionViewInCell:FeatureDelegate{
-    func GetFeatureData(obj: FeatureModel) {
+    func GetFeatureData(obj: MoviesModel) {
         self.result = obj.results
         self.collectionView.reloadData()
     }
@@ -84,7 +86,7 @@ extension FeaturedCollectionViewInCell:UICollectionViewDataSource, UICollectionV
         cell.rating.text = "\(result[indexPath.row].vote_average)"
         
         // знаходи іприсваєюм картинку в ячейку
-        featureServises.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
+        getImageFromUrl.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
             cell.image.image = image
         }
         
@@ -99,4 +101,12 @@ extension FeaturedCollectionViewInCell:UICollectionViewDataSource, UICollectionV
         return CGSize(width: 180, height: self.frame.height - 10);
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let stroryboard = UIStoryboard(name: "Detail", bundle: nil)
+        let detailVC = stroryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.resultMovies = result[indexPath.row]
+//        detailVC.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(detailVC, animated: true, completion: nil)
+    
+    }
 }

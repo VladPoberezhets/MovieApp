@@ -12,6 +12,11 @@ class FavoritesCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
     
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.image.image = nil
+    }
 
     static func nib()->UINib{
         

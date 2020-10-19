@@ -7,6 +7,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - CodableFirebase (0.2.1)
   - Firebase/Auth (6.27.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.6.0)
@@ -80,6 +81,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - CodableFirebase
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
@@ -90,6 +92,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AppAuth
+    - CodableFirebase
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -110,6 +113,7 @@ SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   AlamofireImage: 3d1a2010519e58675318735580eb856e88840ff7
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
   FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
   FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
@@ -126,6 +130,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 4b15a71f99cff3e6c2d81f045b26107d8032215f
+PODFILE CHECKSUM: 3eae8561cb468aef0fa4cb671fd3c5ff9f68ee80
 
 COCOAPODS: 1.8.4

@@ -10,6 +10,7 @@ import AlamofireImage
 
 class MovieViewController: UIViewController {
     
+    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: ["Featured","Latested","Popular","Favorites"])
@@ -18,11 +19,13 @@ class MovieViewController: UIViewController {
         }
     }
     
-   private let activityIndicator = UIActivityIndicatorView()
+    private let activityIndicator = UIActivityIndicatorView()
     
     private var index:Int = 0
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let getImageFromUrl = GetImageFromUrl()
     
     private let featurePresenter = FeaturePresenter(featureServises: FeatureServises())
     
@@ -30,7 +33,7 @@ class MovieViewController: UIViewController {
     private let featureServises = FeatureServises()
     
     // масив з отриманими обєктами
-    private var result = [ResultFeature]()
+    private var result = [ResultMovies]()
     
     
     private let latestedPresenter = LatestedPresenter(latestedServises: LatestedServises())
@@ -39,7 +42,7 @@ class MovieViewController: UIViewController {
     private let latestedServises = LatestedServises()
     
     // масив з отриманими обєктами
-    private var resultLatested = [Result]()
+    private var resultLatested = [ResultMovies]()
     
     private let popularPresenter = PopularPresenter(popularServises: PopularServises())
     
@@ -47,15 +50,20 @@ class MovieViewController: UIViewController {
     private let popularServises = PopularServises()
     
     // масив з отриманими обєктами
-    private var resultPopular = [PopularResult]()
+    private var resultPopular = [ResultMovies]()
+    
+    //
+    private let favoritesMoviePresenter = FavoritesMoviePresenter()
+    
+    private var resultFavorites = [ResultMovies]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
         self.collectionView.addSubview(activityIndicator)
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-50, width: view.frame.width, height: view.frame.height)
+        activityIndicator.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y-150, width: view.frame.width, height: view.frame.height)
         activityIndicator.style = .medium
         activityIndicator.backgroundColor = .white
         activityIndicator.startAnimating()
@@ -88,6 +96,9 @@ class MovieViewController: UIViewController {
         //запускаєм функцію з якої отримуєм дані з апі
         popularPresenter.SetDataPopularToUI()
         
+        favoritesMoviePresenter.setDelegate(favoritesDelegate: self)
+        favoritesMoviePresenter.GetDataFromDataBase()
+        
         print(interfaceSegmented.selectedIndex)
     }
     
@@ -105,7 +116,7 @@ extension MovieViewController:CustomSegmentedControlDelegate{
 }
 
 extension MovieViewController:FeatureDelegate{
-    func GetFeatureData(obj: FeatureModel) {
+    func GetFeatureData(obj: MoviesModel) {
         self.result = obj.results
         if !resultPopular.isEmpty && !resultLatested.isEmpty && !result.isEmpty{
             activityIndicator.stopAnimating()
@@ -120,7 +131,7 @@ extension MovieViewController:FeatureDelegate{
 
 extension MovieViewController:LatestedDelegate{
     //latested data
-    func GetLatestedData(obj: LatestedModel) {
+    func GetLatestedData(obj: MoviesModel) {
         self.resultLatested = obj.results
         if !resultPopular.isEmpty && !resultLatested.isEmpty && !result.isEmpty{
             activityIndicator.stopAnimating()
@@ -130,8 +141,19 @@ extension MovieViewController:LatestedDelegate{
 }
 
 extension MovieViewController:PopularDelegate{
-    func GetLatestedData(obj: PopularModel) {
+    func GetPopularData(obj: MoviesModel) {
         self.resultPopular = obj.results
+        if !resultPopular.isEmpty && !resultLatested.isEmpty && !result.isEmpty{
+            activityIndicator.stopAnimating()
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+extension MovieViewController:FavoritesDelegate{
+    func GetFavoritesData(arr: [ResultMovies]) {
+        self.resultFavorites = arr
+        print("favoritest menu \(arr)")
         if !resultPopular.isEmpty && !resultLatested.isEmpty && !result.isEmpty{
             activityIndicator.stopAnimating()
             self.collectionView.reloadData()
@@ -141,24 +163,34 @@ extension MovieViewController:PopularDelegate{
 
 extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.result.count
+        if index == 0{
+            return result.count
+        }else if index == 1{
+            return resultLatested.count
+        }else if index == 2{
+            return resultPopular.count
+        }else if index == 3{
+           return resultFavorites.count
+        }
+        return 0
     }
     
+    // відображення даних в ячєйкі
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath)
         if index == 0{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedCell", for: indexPath) as! FeaturedCell
-   
-        cell.title.text = result[indexPath.row].title
-        cell.date.text = result[indexPath.row].release_date
-        cell.rating.text = "\(result[indexPath.row].vote_average)"
-        
-        // знаходи іприсваєюм картинку в ячейку
-        featureServises.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
-            cell.image.image = image
-        }
-          
-        return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedCell", for: indexPath) as! FeaturedCell
+            
+            cell.title.text = result[indexPath.row].title
+            cell.date.text = result[indexPath.row].release_date
+            cell.rating.text = "\(result[indexPath.row].vote_average)"
+            
+            // знаходи іприсваєюм картинку в ячейку
+            getImageFromUrl.GetImage(urlImage: result[indexPath.row].poster_path) { (image) in
+                cell.image.image = image
+            }
+            
+            return cell
         }else if index == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestedCell", for: indexPath) as! LatestedCell
             
@@ -166,10 +198,10 @@ extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSourc
             cell.date.text = resultLatested[indexPath.row].release_date
             cell.descritptionMovie.text = resultLatested[indexPath.row].overview
             
-            latestedServises.GetImage(urlImage: resultLatested[indexPath.row].poster_path) { (image) in
+            getImageFromUrl.GetImage(urlImage: resultLatested[indexPath.row].poster_path) { (image) in
                 cell.image.image = image
             }
-           return cell
+            return cell
         }else if index == 2{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularCell", for: indexPath) as! PopularCollectionViewCell
             
@@ -178,10 +210,21 @@ extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSourc
             cell.rating.text = "\(resultPopular[indexPath.row].vote_average)"
             
             // знаходи іприсваєюм картинку в ячейку
-            popularServises.GetImage(urlImage: resultPopular[indexPath.row].poster_path) { (image) in
+            getImageFromUrl.GetImage(urlImage: resultPopular[indexPath.row].poster_path) { (image) in
                 cell.image.image = image
             }
-           return cell
+            return cell
+        }else if index == 3{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCell
+            
+            cell.title.text = resultFavorites[indexPath.row].title
+            cell.date.text = resultFavorites[indexPath.row].release_date
+            
+            // знаходи іприсваєюм картинку в ячейку
+            getImageFromUrl.GetImage(urlImage: resultFavorites[indexPath.row].poster_path) { (image) in
+                cell.image.image = image
+            }
+            return cell
         }
         return cell
     }
@@ -200,8 +243,26 @@ extension MovieViewController:UICollectionViewDelegate,UICollectionViewDataSourc
         }
         
         // тут буде перевірки чи є обрані фільми якщо немає то встановлюєм занчення 0 0
-        return CGSize(width: view.frame.width-20, height: 200);
+        return CGSize(width: view.frame.width-20, height: 250);
     }
     
-    
+    // при натисканіна ячєйку переходим до детального перегляду
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let stroryboard = UIStoryboard(name: "Detail", bundle: nil)
+        let detailVC = stroryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        if index == 0 {
+            detailVC.resultMovies = result[indexPath.row]
+            //        detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC, animated: true, completion: nil)
+        }else if index == 1{
+            detailVC.resultMovies = resultLatested[indexPath.row]
+            //        detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC, animated: true, completion: nil)
+        }else if index == 2{
+            detailVC.resultMovies = resultPopular[indexPath.row]
+            //        detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC, animated: true, completion: nil)
+        }
+    }
 }
