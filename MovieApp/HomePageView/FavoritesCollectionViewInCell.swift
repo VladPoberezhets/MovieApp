@@ -69,7 +69,7 @@ extension FavoritesCollectionViewInCell:UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCell
         
-            cell.title.text = resultMovies[indexPath.row].title
+        cell.title.text = resultMovies[indexPath.row].title
         cell.date.text = resultMovies[indexPath.row].release_date
         
         // знаходи іприсваєюм картинку в ячейку
@@ -81,6 +81,7 @@ extension FavoritesCollectionViewInCell:UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     
         return resultMovies.count
     }
     //розмір collectionView

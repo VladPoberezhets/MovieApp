@@ -60,6 +60,7 @@
 		F5C1B4D02527316500138260 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4CF2527316500138260 /* FeaturedCell.swift */; };
 		F5C1B4D32527317B00138260 /* LatestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4D22527317B00138260 /* LatestedCell.swift */; };
 		F5C1B4EB252753E600138260 /* FavoritesCollectionViewInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C1B4EA252753E600138260 /* FavoritesCollectionViewInCell.swift */; };
+		F5D06505253D7F0500A7734F /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06504253D7F0500A7734F /* FavoritesCollectionViewController.swift */; };
 		F5DEA3E02539B6C30099A805 /* GetImageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEA3DF2539B6C30099A805 /* GetImageFromUrl.swift */; };
 		F5E82C8B2521EED500C01ADD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */; };
 		F5E82C912521F5E700C01ADD /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */; };
@@ -126,6 +127,7 @@
 		F5C1B4CF2527316500138260 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeaturedCell.swift; path = MovieApp/HomePageView/FeaturedCell.swift; sourceTree = SOURCE_ROOT; };
 		F5C1B4D22527317B00138260 /* LatestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LatestedCell.swift; path = MovieApp/HomePageView/LatestedCell.swift; sourceTree = SOURCE_ROOT; };
 		F5C1B4EA252753E600138260 /* FavoritesCollectionViewInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesCollectionViewInCell.swift; path = MovieApp/HomePageView/FavoritesCollectionViewInCell.swift; sourceTree = SOURCE_ROOT; };
+		F5D06504253D7F0500A7734F /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		F5DEA3DF2539B6C30099A805 /* GetImageFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageFromUrl.swift; sourceTree = "<group>"; };
 		F5E82C8A2521EED500C01ADD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5E82C902521F5E700C01ADD /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		F517D0AC252487E800492A2A /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
+				F5D06503253D7EE300A7734F /* FavoritesCollectionView */,
 				F517D0B0252487FA00492A2A /* UserModel.swift */,
 				F517D0B7252492AE00492A2A /* ProfileViewController.swift */,
 				F5BA36AC2525C6AE00464E36 /* ProfileSettings.swift */,
@@ -409,6 +412,14 @@
 			path = LatestedCell;
 			sourceTree = "<group>";
 		};
+		F5D06503253D7EE300A7734F /* FavoritesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D06504253D7F0500A7734F /* FavoritesCollectionViewController.swift */,
+			);
+			path = FavoritesCollectionView;
+			sourceTree = "<group>";
+		};
 		F5DEA3DE2539B6A20099A805 /* GetImageForUrl */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +599,7 @@
 				F5C1B4D02527316500138260 /* FeaturedCell.swift in Sources */,
 				F5A9F3722521D5EE00DC9958 /* AppDelegate.swift in Sources */,
 				F55818F0252B3B6800C38240 /* FeaturedCollectionViewInCell.swift in Sources */,
+				F5D06505253D7F0500A7734F /* FavoritesCollectionViewController.swift in Sources */,
 				F5C1B4CD2527315300138260 /* FavoritesCell.swift in Sources */,
 				F51C1AB025371475000E467A /* DetailNavigationController.swift in Sources */,
 				F517D09625247FFA00492A2A /* PasswordRecoverySettings.swift in Sources */,

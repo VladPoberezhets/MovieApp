@@ -62,9 +62,7 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
         
         if indexPath.section == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCollectionViewInCell
-            if cell.resultMovies.isEmpty{
-                cell.isHidden = true
-            }
+
             return cell
         }else if indexPath.section == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedCell", for: indexPath) as! FeaturedCollectionViewInCell
@@ -95,15 +93,15 @@ class HomeCollectionViewController: UICollectionViewController,UICollectionViewD
         
         if indexPath.section == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCollectionViewInCell
-            print(cell.resultMovies.isEmpty)
+//            print(cell.resultMovies.isEmpty)
             if cell.resultMovies.isEmpty{
-//                collectionView.reloadData()
-//                cell.isHidden = true
+////                collectionView.reloadData()
+//                cell.collectionView.reloadData()
                 return CGSize(width: 0, height: 0);
             }
-            else{
+          
                 return CGSize(width: view.frame.width-20, height: 250);
-            }
+            
         }
         // тут буде перевірки чи є обрані фільми якщо немає то встановлюєм занчення 0 0
         return CGSize(width: 0, height: 0);
